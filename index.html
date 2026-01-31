@@ -1,16 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>For You ❤️</title>
-</head>
-<body style="text-align:center; font-family:sans-serif; margin-top:80px;">
-  <h1>Happy Valentine ❤️</h1>
-  <p>Press play</p>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For You ❤️</title>
 
-  <audio controls>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Playfair Display',serif;
+  background:#0d0d0d;
+  color:white;
+  overflow-x:hidden;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.typing{
+  font-size:3em;
+  border-right:2px solid white;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:typing 5s steps(40,end) forwards;
+}
+
+@keyframes typing{
+  to{width:100%;}
+}
+
+button{
+  margin-top:40px;
+  padding:15px 40px;
+  font-size:1.2em;
+  background:white;
+  color:black;
+  border:none;
+  cursor:pointer;
+  opacity:0;
+  animation:fadeIn 2s 5s forwards;
+}
+
+@keyframes fadeIn{to{opacity:1;}}
+
+.gallery{
+  padding:100px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:120px;
+  align-items:center;
+}
+
+.polaroid{
+  background:white;
+  color:black;
+  padding:15px 15px 40px 15px;
+  width:260px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  opacity:0;
+  transform:translateY(80px);
+  transition:1s;
+}
+
+.polaroid img{
+  width:100%;
+}
+
+.caption{
+  margin-top:10px;
+  text-align:center;
+  font-size:0.9em;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="typing">I made this for you ❤️</div>
+  <button onclick="play()">Play</button>
+  <audio id="voice">
     <source src="voice.mp3" type="audio/mpeg">
   </audio>
+</div>
+
+<div class="gallery" id="gallery">
+  <!-- 1 -->
+  <div class="polaroid">
+    <img src="img1.jpg">
+    <div class="caption">Where our hands learned trust</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="polaroid">
+    <img src="img2.jpg">
+    <div class="caption">Side by side, through seasons</div>
+  </div>
+
+  <!-- 3 -->
+  <div class="polaroid">
+    <img src="img3.jpg">
+    <div class="caption">Smiles we couldn't fake</div>
+  </div>
+
+  <!-- 4 -->
+  <div class="polaroid">
+    <img src="img4.jpg">
+    <div class="caption">Finally, no more distance</div>
+  </div>
+
+  <!-- 5 -->
+  <div class="polaroid">
+    <img src="img5.jpg">
+    <div class="caption">My eyes still find you first</div>
+  </div>
+
+  <!-- 6 -->
+  <div class="polaroid">
+    <img src="img6.jpg">
+    <div class="caption">Before we knew, we knew</div>
+  </div>
+</div>
+
+<script>
+function play(){
+  document.getElementById('voice').play();
+  window.scrollTo({top: window.innerHeight, behavior:'smooth'});
+}
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.polaroid').forEach(el=>{
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>
