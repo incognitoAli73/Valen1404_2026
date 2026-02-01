@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Enter - رویایی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0b0b0f, #1a1a2e, #16213e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* افکت ستاره‌ها */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration, 5s) infinite ease-in-out;
+  opacity: var(--opacity, 0.8);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.box {
+  text-align: center;
+  background: rgba(15, 15, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  z-index: -1;
+  animation: shine 6s infinite;
+}
+
+@keyframes shine {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #ff7eb3, #ff758c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(255, 126, 179, 0.2);
+}
+
+input {
+  padding: 16px 20px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(255, 126, 179, 0.3);
+  transform: translateY(-2px);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  margin-top: 25px;
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+button:hover::after {
+  transform: rotate(45deg) translate(20%, 20%);
+}
+
+/* افکت تغییر رنگ دکمه */
+button {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4); }
+  50% { box-shadow: 0 5px 20px rgba(255, 117, 140, 0.8); }
+  100% { box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4); }
+}
+
+/* افکت ورود به صفحه */
+.box {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* افکت عناصر در حال حاضر */
+input, button {
+  animation: slideIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+input {
+  animation-delay: 0.2s;
+}
+
+button {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* افکت پس‌زمینه دایره‌ای */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 117, 140, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.circle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: -150px;
+}
+
+.circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(255, 126, 179, 0.1) 0%, transparent 70%);
+}
+
+/* افکت رنگ‌های پس‌زمینه */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 126, 179, 0.1) 0%, transparent 40%),
+              radial-gradient(circle at 80% 20%, rgba(255, 117, 140, 0.1) 0%, transparent 40%);
+  z-index: -1;
+}
+
+/* افکت شناور */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.box {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* پاسخ‌های مخصوص */
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 117, 140, 0.9);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+
+.alert.show {
+  opacity: 1;
+}
+
+/* نمایش افکت در صفحه */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 11, 15, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.loading.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-top: 5px solid #ff758c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="box">
+  <h2> Enter the password❤️</h2>
+  <input id="pass" type="password" placeholder="password"/>
+  <br/>
+  <button onclick="check()">enter</button>
+</div>
+
+<div class="alert" id="alert">wrong password!</div>
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+</div>
+
+<script>
+const PASSWORD = "love1404"; // ← رمزت اینجاست
+
+function check(){
+  const p = document.getElementById("pass").value;
+  const alertBox = document.getElementById("alert");
+  const loading = document.getElementById("loading");
+  
+  if(p === PASSWORD){
+    // نمایش افکت بارگذاری
+    loading.classList.add("show");
+    
+    // تاخیر قبل از ریدایرکت
+    setTimeout(() => {
+      localStorage.setItem("ok","yes");
+      window.location.href = "index.html";
+    }, 1500);
+  } else {
+    // نمایش پیام اشتباه
+    alertBox.classList.add("show");
+    
+    // پاک کردن پیام بعد از 2 ثانیه
+    setTimeout(() => {
+      alertBox.classList.remove("show");
+    }, 2000);
+    
+    // افکت تکان خوردن
+    document.querySelector(".box").style.animation = "shake 0.5s";
+    setTimeout(() => {
+      document.querySelector(".box").style.animation = "";
+    }, 500);
+  }
+}
+
+// ایجاد ستاره‌ها
+function createStars() {
+  const body = document.querySelector('body');
+  const starCount = 100;
+  
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    
+    // موقعیت تصادفی
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    
+    // اندازه تصادفی
+    const size = Math.random() * 3 + 1;
+    
+    // مدت زمان تابش
+    const duration = Math.random() * 5 + 3;
+    
+    // شفافیت تصادفی
+    const opacity = Math.random() * 0.7 + 0.3;
+    
+    star.style.left = `${x}%`;
+    star.style.top = `${y}%`;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.setProperty('--duration', `${duration}s`);
+    star.style.setProperty('--opacity', opacity);
+    
+    body.appendChild(star);
+  }
+}
+
+// ایجاد دایره‌های پس‌زمینه
+function createCircles() {
+  const body = document.querySelector('body');
+  const circleCount = 5;
+  
+  for (let i = 0; i < circleCount; i++) {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    
+    // اندازه تصادفی
+    const size = Math.random() * 300 + 100;
+    
+    // موقعیت تصادفی
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    
+    circle.style.width = `${size}px`;
+    circle.style.height = `${size}px`;
+    circle.style.left = `${x}%`;
+    circle.style.top = `${y}%`;
+    
+    body.appendChild(circle);
+  }
+}
+
+// ایجاد افکت تکان خوردن
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+`;
+document.head.appendChild(style);
+
+// اجرای تابع ایجاد ستاره‌ها
+window.onload = function() {
+  createStars();
+  createCircles();
+};
+
+</script>
+
+</body>
+</html>

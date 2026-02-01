@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">f
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>For My Valentine</title>
+    <title> For My Valentine ❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Pacifico&family=Sacramento&family=Alex+Brush&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tahoma', sans-serif;
         }
+
         body {
-            background: linear-gradient(135deg, #1a0a1f, #2d0b2d, #4a0c3d);
+            background: linear-gradient(135deg, #0a0510, #1a0a1f, #2d0b2d, #4a0c3d);
             color: #fff;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .background-elements {
             position: absolute;
             top: 0;
@@ -31,6 +35,7 @@
             z-index: -1;
             overflow: hidden;
         }
+
         .heart {
             position: absolute;
             color: rgba(255, 105, 180, 0.15);
@@ -38,68 +43,27 @@
             animation: float 15s infinite linear;
             text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
         }
-        .heart:nth-child(2n) {
-            color: rgba(255, 20, 147, 0.1);
-            animation-duration: 20s;
-        }
+
         @keyframes float {
-            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
         }
-        .title-container {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding: 0 1rem;
-            z-index: 10;
-        }
-        .title {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #ff69b4, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: glow 2s ease-in-out infinite alternate;
-            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-        }
-        .subtitle {
-            font-size: 1.6rem;
-            font-weight: 300;
-            color: #ff69b4;
-            letter-spacing: 1px;
-            opacity: 0.9;
-        }
-        .typing-text {
-            font-size: 1.4rem;
-            color: #fff;
-            margin-top: 1rem;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #ff69b4;
-            animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
-            width: 0;
-            text-align: center;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #ff69b4; }
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4, 0 0 15px #ff69b4; }
-            to { text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff69b4; }
-        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -109,39 +73,67 @@
             width: 95%;
             z-index: 10;
         }
+
+        .title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ff69b4, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
+            }
+
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+            }
+        }
+
+        /* تغییر سایز فونت متن تایپ شونده به کوچکتر */
+        .typing-text {
+            font-size: 1.5rem; /* کاهش سایز از 1.8rem به 1.5rem */
+            color: #ffb6c1;
+            height: 40px; /* کاهش ارتفاع متناسب با فونت کوچکتر */
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(255, 182, 193, 0.5);
+        }
+
         .photo-frame {
             position: relative;
-            width: 280px;
-            height: 380px;
+            width: 320px;
+            height: 420px;
             margin: 0 auto 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             transform-style: preserve-3d;
             perspective: 1000px;
             transition: transform 0.5s ease;
-            border: 1px solid rgba(255, 105, 180, 0.3);
+            border: 3px solid rgba(255, 105, 180, 0.3);
+            cursor: pointer;
         }
-        .photo-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(255, 105, 180, 0.2), rgba(255, 20, 147, 0.2));
-            z-index: 1;
-            transition: opacity 0.4s ease;
-        }
-        .photo-frame.playing::before {
-            opacity: 0.4;
-        }
+
         .photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s;
         }
+
+        .photo-frame:hover img {
+            transform: scale(1.05);
+        }
+
         .play-overlay {
             position: absolute;
             top: 0;
@@ -149,160 +141,351 @@
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 3;
             pointer-events: none;
+            background: rgba(0, 0, 0, 0.1);
         }
-        .visualizer {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 105, 180, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: rotate 15s linear infinite paused;
-        }
-        .visualizer::before {
-            content: '';
-            position: absolute;
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 105, 180, 0.4);
-        }
-        .visualizer span {
-            position: absolute;
-            width: 5px;
-            height: 25px;
-            background: linear-gradient(to top, #ff69b4, #ff1493);
-            border-radius: 3px;
-            transform-origin: bottom center;
-            animation: pulse-bar 1.5s infinite alternate paused;
-        }
-        /* 12 bars around circle */
-        .visualizer span:nth-child(1) { transform: rotate(0deg) translateY(-40px); }
-        .visualizer span:nth-child(2) { transform: rotate(30deg) translateY(-40px); }
-        .visualizer span:nth-child(3) { transform: rotate(60deg) translateY(-40px); }
-        .visualizer span:nth-child(4) { transform: rotate(90deg) translateY(-40px); }
-        .visualizer span:nth-child(5) { transform: rotate(120deg) translateY(-40px); }
-        .visualizer span:nth-child(6) { transform: rotate(150deg) translateY(-40px); }
-        .visualizer span:nth-child(7) { transform: rotate(180deg) translateY(-40px); }
-        .visualizer span:nth-child(8) { transform: rotate(210deg) translateY(-40px); }
-        .visualizer span:nth-child(9) { transform: rotate(240deg) translateY(-40px); }
-        .visualizer span:nth-child(10) { transform: rotate(270deg) translateY(-40px); }
-        .visualizer span:nth-child(11) { transform: rotate(300deg) translateY(-40px); }
-        .visualizer span:nth-child(12) { transform: rotate(330deg) translateY(-40px); }
 
-        @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @keyframes pulse-bar { 0% { height: 15px; opacity: 0.6; } 100% { height: 35px; opacity: 1; } }
-
+        /* دکمه پلی لیکوئید شیشه‌ای */
         .play-btn {
-            position: absolute;
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            pointer-events: all;
+            z-index: 4;
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(255, 105, 180, 0.4);
+            transition: all 0.4s ease;
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
-            transition: all 0.3s ease;
-            pointer-events: all;
-            z-index: 4;
+            position: relative;
+            overflow: hidden;
         }
+
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent,
+                rgba(255, 255, 255, 0.05),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .play-btn:hover::before {
+            transform: rotate(45deg) translateX(100%);
+        }
+
         .play-btn:hover {
             transform: scale(1.1);
+            box-shadow: 
+                0 0 30px rgba(255, 255, 255, 0.3),
+                inset 0 0 25px rgba(255, 255, 255, 0.15),
+                0 0 60px rgba(255, 105, 180, 0.6);
         }
-        .play-btn i {
-            font-size: 2.5rem;
+
+        .play-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* افکت موجی دور دکمه */
+        .ripple {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: ripple 3s infinite linear;
+            pointer-events: none;
+        }
+
+        .ripple:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .ripple:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* دکمه نامه با استایل جدید */
+        .letter-btn {
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.9), rgba(255, 20, 147, 0.9));
             color: white;
-            margin-left: 5px; /* برای پلی کمی به راست */
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Sacramento', cursive;
+            letter-spacing: 1px;
         }
-        .playing .play-btn {
-            opacity: 0.7;
+
+        .letter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
         }
-        .caption {
-            font-size: 1.6rem;
-            text-align: center;
-            margin: 1rem 0;
+
+        .letter-btn:hover::before {
+            left: 100%;
+        }
+
+        .letter-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.6);
+        }
+
+        /* استایل پنجره نامه */
+        .message-window {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .message-content {
+            background: linear-gradient(145deg, rgba(45, 11, 45, 0.9), rgba(26, 10, 31, 0.9));
+            border: 2px solid rgba(255, 105, 180, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: popIn 0.5s ease-out;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 2.5rem;
             color: #ff69b4;
-            font-weight: 500;
-            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-            animation: pulse 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+
+        .close-btn:hover {
+            color: #ff1493;
+            background: rgba(255, 105, 180, 0.1);
+            transform: rotate(90deg);
         }
-        .instructions {
-            text-align: center;
-            margin-top: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            max-width: 500px;
-            padding: 0 1rem;
+
+        /* فونت زیبا و شیک برای متن نامه */
+        .message-text {
+            line-height: 2.2;
+            font-size: 1.3rem;
+            color: #fce4ec;
+            text-align:center;
+            font-family: 'Great Vibes', cursive;
+            padding: 10px;
+            letter-spacing: 1px;
         }
-        /* Responsive برای آیفون */
-        @media (max-width: 768px) {
-            .title { font-size: 2.5rem; }
-            .photo-frame { width: 250px; height: 340px; }
-            .play-btn { width: 70px; height: 70px; }
-            .play-btn i { font-size: 2.2rem; }
-            .visualizer { width: 90px; height: 90px; }
+
+        /* ستاره‌های درخشان در پس‌زمینه */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
         @media (max-width: 480px) {
-            .title { font-size: 2.2rem; }
-            .photo-frame { width: 220px; height: 300px; }
-            .play-btn { width: 65px; height: 65px; }
-            .play-btn i { font-size: 2rem; }
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .typing-text {
+                font-size: 1.3rem; /* کوچکتر برای موبایل */
+                height: 35px;
+            }
+            
+            .photo-frame {
+                width: 260px;
+                height: 340px;
+            }
+            
+            .play-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 1.7rem;
+            }
+            
+            .message-text {
+                font-size: 1.1rem;
+                line-height: 1.9;
+            }
+            
+            .letter-btn {
+                padding: 12px 30px;
+                font-size: 1.2rem;
+            }
         }
-        @media (max-width: 375px) {
-            .title { font-size: 2rem; }
-            .photo-frame { width: 200px; height: 280px; }
+
+        @media (max-width: 768px) {
+            .message-content {
+                padding: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="background-elements" id="background"></div>
+    <div class="stars" id="stars"></div>
     
     <div class="container">
-        <div class="title-container">
-            <h1 class="title">For My Valentine</h1>
-            <p class="subtitle">A Special Message Just For You</p>
-            <div class="typing-text" id="typingText"></div>
-        </div>
+        <h1 class="title">For My Valentine</h1>
+        <div class="typing-text" id="typingText"></div>
         
         <div class="photo-frame" id="photoFrame">
-            <img src="img.jpg" alt="My Valentine">
+            <img src="img.jpg" alt="Valentine">
             <div class="play-overlay">
-                <div class="visualizer" id="visualizer">
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
-                </div>
+                <!-- افکت‌های موجی دور دکمه -->
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                
+                <!-- دکمه پلی با استایل جدید -->
                 <button class="play-btn" id="playButton">
                     <i class="fas fa-play"></i>
                 </button>
             </div>
         </div>
         
-        <div class="caption pulse">You are my everything</div>
-        
-        <p class="instructions">
-            Tap the play button on the photo to hear your special voice message 💕
-        </p>
+        <!-- دکمه نامه با متن جدید -->
+        <button class="letter-btn" id="openMessage">
+            <i class="fas fa-heart"></i> Letter
+        </button>
     </div>
 
-    <!-- صوت مخفی -->
+    <div class="message-window" id="messageWindow">
+        <div class="message-content">
+            <span class="close-btn" id="closeMessage">&times;</span>
+            <h2 style="color: #ff69b4; margin-bottom: 25px; text-align: center; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">عشق من...</h2>
+            <div class="message-text">
+                تو را به جاي همه کساني که نشناخته ام دوست مي دارم <br>
+                تو را به خاطر عطر نان گرم <br>
+                براي برفي که آب مي شود دوست مي دارم <br>
+                تو را براي دوست داشتن دوست مي دارم <br>
+                تو را به جاي همه کساني که دوست نداشته ام دوست مي دارم <br>
+                تو را به خاطر دوست داشتن دوست مي دارم <br>
+                براي اشکي که خشک شد و هيچ وقت نريخت <br>
+                لبخندي که محو شد و هيچ گاه نشکفت دوست مي دارم <br>
+                تو را به خاطر خاطره ها دوست مي دارم <br>
+                براي پشت کردن به آرزوهاي محال <br>
+                به خاطر نابودي توهم و خيال دوست مي دارم <br>
+                تو را براي دوست داشتن دوست مي دارم <br>
+                تو را به خاطربوي لاله هاي وحشي <br>
+                به خاطر گونه ي زرين آفتاب گردان <br>
+                براي بنفشیِ بنفشه ها دوست مي دارم <br>
+                تو را به خاطر دوست داشتن دوست مي دارم <br>
+                تو را به جاي همه کساني که نديده ام دوست مي دارم <br>
+                تورا براي لبخند تلخ لحظه ها <br>
+                پرواز شيرين خاطره ها دوست مي دارم <br>
+                تورا به اندازه ي همه ي کساني که نخواهم ديد دوست مي دارم <br>
+                اندازه قطرات باران ، اندازه ي ستاره هاي آسمان دوست مي دارم <br>
+                تو را به اندازه خودت ، اندازه آن قلب پاکت دوست مي دارم <br>
+                تو را براي دوست داشتن دوست مي دارم <br>
+                تو را به جاي همه ي کساني که نمي شناخته ام ... دوست مي دارم <br>
+                تو را به جاي همه ي روزگاراني که نمي زيسته ام ... دوست مي دارم <br>
+                براي خاطر عطر نان گرم و برفي که آب مي شود و براي نخستين گناه <br>
+                تو را به خاطر دوست داشتن ... دوست مي دارم <br>
+                تو را به جاي تمام کساني که دوست نمي دارم ... دوست مي دارم ...
+            </div>
+        </div>
+    </div>
+
     <audio id="myAudio" src="voice.mp3"></audio>
 
     <script>
-        // Floating hearts
+        // ایجاد قلب‌های شناور
         const background = document.getElementById('background');
         for (let i = 0; i < 30; i++) {
             const heart = document.createElement('div');
@@ -311,79 +494,103 @@
             heart.style.left = `${Math.random() * 100}%`;
             heart.style.fontSize = `${0.5 + Math.random() * 2}rem`;
             heart.style.animationDuration = `${10 + Math.random() * 20}s`;
-            heart.style.animationDelay = `${Math.random() * 10}s`;
+            heart.style.animationDelay = `${Math.random() * 5}s`;
             background.appendChild(heart);
         }
 
-        // Typewriter
+        // ایجاد ستاره‌های درخشان
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = `${Math.random() * 3 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            star.style.opacity = Math.random() * 0.7 + 0.3;
+            starsContainer.appendChild(star);
+        }
+
+        // Typewriter اصلاح شده - فقط یکبار تایپ می‌شود و ثابت می‌ماند
         const typingText = document.getElementById('typingText');
-        const text = "I love you more than words can say...";
-        let i = 0;
+        const textToType = "...My love for you is a journey starting at forever and ending at never";
+        let charIdx = 0;
+        
         function typeWriter() {
-            if (i < text.length) {
-                typingText.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                typingText.style.borderRight = 'none';
+            if (charIdx < textToType.length) {
+                typingText.innerHTML += textToType.charAt(charIdx);
+                charIdx++;
+                setTimeout(typeWriter, 50); // سرعت تایپ
             }
         }
+        
+        // شروع تایپ پس از یک تأخیر کوتاه
         setTimeout(typeWriter, 1000);
 
         // Audio and Play Button
         const audio = document.getElementById('myAudio');
-        const playButton = document.getElementById('playButton');
-        const playIcon = playButton.querySelector('i');
+        const playBtn = document.getElementById('playButton');
         const photoFrame = document.getElementById('photoFrame');
-        const visualizer = document.getElementById('visualizer');
+        const ripples = document.querySelectorAll('.ripple');
 
-        playButton.addEventListener('click', function() {
+        function togglePlay() {
             if (audio.paused) {
                 audio.play();
-                playIcon.classList.remove('fa-play');
-                playIcon.classList.add('fa-pause');
-                photoFrame.classList.add('playing');
-                visualizer.style.animationPlayState = 'running';
-                visualizer.querySelectorAll('span').forEach(span => {
-                    span.style.animationPlayState = 'running';
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                // فعال کردن انیمیشن موج‌ها
+                ripples.forEach(ripple => {
+                    ripple.style.animationPlayState = 'running';
                 });
             } else {
                 audio.pause();
-                playIcon.classList.remove('fa-pause');
-                playIcon.classList.add('fa-play');
-                photoFrame.classList.remove('playing');
-                visualizer.style.animationPlayState = 'paused';
-                visualizer.querySelectorAll('span').forEach(span => {
-                    span.style.animationPlayState = 'paused';
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                // متوقف کردن انیمیشن موج‌ها
+                ripples.forEach(ripple => {
+                    ripple.style.animationPlayState = 'paused';
                 });
             }
+        }
+        
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            togglePlay();
         });
-
-        // وقتی صوت تموم شد، برگرده به حالت پلی
-        audio.addEventListener('ended', function() {
-            playIcon.classList.remove('fa-pause');
-            playIcon.classList.add('fa-play');
-            photoFrame.classList.remove('playing');
-            visualizer.style.animationPlayState = 'paused';
-            visualizer.querySelectorAll('span').forEach(span => {
-                span.style.animationPlayState = 'paused';
+        
+        photoFrame.addEventListener('click', togglePlay);
+        
+        audio.onended = () => {
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            ripples.forEach(ripple => {
+                ripple.style.animationPlayState = 'paused';
             });
+        };
+
+        // Message Window Logic
+        const modal = document.getElementById('messageWindow');
+        document.getElementById('openMessage').onclick = () => modal.style.display = 'flex';
+        document.getElementById('closeMessage').onclick = () => modal.style.display = 'none';
+        window.onclick = (e) => {
+            if (e.target == modal) modal.style.display = 'none';
+        };
+
+        // 3D effect برای قاب عکس
+        photoFrame.addEventListener('mousemove', (e) => {
+            const rect = photoFrame.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            photoFrame.style.transform = `perspective(1000px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg) scale(1.02)`;
+        });
+        
+        photoFrame.addEventListener('mouseleave', () => {
+            photoFrame.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
         });
 
-        // 3D hover effect
-        const photoFrameEl = document.querySelector('.photo-frame');
-        photoFrameEl.addEventListener('mousemove', (e) => {
-            const rect = photoFrameEl.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateY = (x - centerX) / 20;
-            const rotateX = (centerY - y) / 20;
-            photoFrameEl.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-        photoFrameEl.addEventListener('mouseleave', () => {
-            photoFrameEl.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        // افکت پارالاکس برای پس‌زمینه
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 20;
+            const y = (e.clientY / window.innerHeight) * 20;
+            document.querySelector('.background-elements').style.transform = `translate(${x}px, ${y}px)`;
         });
     </script>
 </body>
