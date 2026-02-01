@@ -7,6 +7,8 @@
     <title> For My Valentine ❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Pacifico&family=Sacramento&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://cdn.fontcdn.ir/Font/Persian/IranNastaliq/IranNastaliq.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -382,8 +384,16 @@
             }
             
             .typing-text {
-                font-size: 1.3rem; /* کوچکتر برای موبایل */
-                height: 35px;
+    font-size: 2.2rem;
+    color: #ffb6c1;
+    height: 60px;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'IranNastaliq', cursive;
+    letter-spacing: 0;
+    text-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
+}
+
             }
             
             .photo-frame {
@@ -514,7 +524,7 @@
 
         // Typewriter اصلاح شده - فقط یکبار تایپ می‌شود و ثابت می‌ماند
         const typingText = document.getElementById('typingText');
-        const textToType = "...My love for you is a journey starting at forever and ending at never";
+        const textToType = " چنانت دوست می‌دارم... ";
         let charIdx = 0;
         
         function typeWriter() {
@@ -596,4 +606,5 @@
 </body>
 
 </html>
+
 
